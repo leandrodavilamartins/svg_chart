@@ -180,6 +180,11 @@
         linha21.setAttribute("x2", 1200);
         linha21.setAttribute("y2", 600);
 
+
+        setTimeout(()=>{
+            linha01.setAttribute('transform', "rotate(-10,50,100)" );
+        },1000)
+
         let counter=0;
 
         setTimeout(()=>{
@@ -190,6 +195,7 @@
                 // VERTICAL LINES 
                 linha01.setAttribute('x1',counter + 200);
                 linha01.setAttribute('y1',100);
+
 
                 linha02.setAttribute('x1',counter + 250);
                 linha02.setAttribute('y1',100);
@@ -255,7 +261,7 @@
                 }
 
             },1)
-        },2000)
+        },4000)
          
 
     </script>

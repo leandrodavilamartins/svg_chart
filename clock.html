@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <svg width="800" height="600" style="background-color:#151718 ;">
+            <circle cx="200" cy="200" r="100"  fill="black" stroke="orange" stroke-width="2" />
+            <rect id="pointer" x="200" y="198" height="3" width="70" fill="turquoise" stroke="turquoise" stroke-width="2"/>
+            <circle id="cpoint" cx="200" cy="200" r="6" fill="orange" stroke="orange" stroke-width="1" />
+
+        </svg>
+    </div>
+    
+    <script>
+        let pointer = document.querySelector('#pointer');
+        console.log(pointer);
+        
+            let angle = -90 ;
+            setInterval(()=>{
+                pointer.setAttribute('style',`transform-origin: 200px 200px ; transform:rotate(${angle}deg);`);
+                angle += 6;
+            },1000);
+
+
+    </script>
+</body>
+</html>
