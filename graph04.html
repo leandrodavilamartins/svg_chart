@@ -69,9 +69,8 @@
         let origin = [200,800];
 
 
-
-
-        points.forEach( p => {
+        // plot the graph 
+        points.forEach( p => {  
             let px = origin[0] + (xUnit * p[0]);
             let py = origin[1] - (yUnit * p[1]);
             let el = `<circle cx="${px}" cy="${py}" r="6" stroke="black" fill="turquoise" stroke-width="1"/>`;
