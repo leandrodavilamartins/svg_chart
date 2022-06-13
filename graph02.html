@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+</head>
+<body style="background-color:#151718;">
+    <div>
+        <svg width="1200" height="800" viewBox="0 0 1800 1200">
+            <g id="axis">
+                <line x1="200" y1="200" x2="200" y2="800" stroke="orange" stroke-width="2"/>
+                <line x1="200" y1="800" x2="1200" y2="800" stroke="orange" stroke-width="2"/>
+            </g>
+
+            <g id="data_points">
+            </g>
+        </svg>
+    </div>
+
+    <script>
+        let points = [[100.5,200.1],[200,400],[1800,1200],[500,500],[800,600],[250,250],[700,750],[10,10],[20,20],[50,80],[900,900],[1300,1300],[1400,1400],[750,1000],[200,20]];
+
+        let yMax = [];
+        let xMax = [];
+
+        points.forEach(p => {
+            yMax.push(p[1]);
+            xMax.push(p[0]);
+            return 0;
+        })
+
+        console.log(yMax);
+        console.log(xMax);
+        console.log(_.max(yMax));
+        console.log(_.max(xMax));
+
+        let margin = 10;
+
+        let yUnit = (600 - margin) / _.max(yMax); 
+        let xUnit = (1000 - margin) / _.max(xMax); 
+        console.log(yUnit);
+        console.log(xUnit);
+
+        let axis = document.querySelector("#axis");
+        console.log(axis);
+
+        let origin = [200,800];
+
+
+
+
+        points.forEach( p => {
+            let px = origin[0] + (xUnit * p[0]);
+            let py = origin[1] - (yUnit * p[1]);
+            let el = `<circle cx="${px}" cy="${py}" r="6" stroke="black" fill="turquoise" stroke-width="1"/>`;
+            return axis.innerHTML += el;
+        });
+    </script>
+</body>
+</html>
